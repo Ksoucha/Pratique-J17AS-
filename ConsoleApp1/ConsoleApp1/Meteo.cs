@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace MonOutil
 {
     internal class Meteo
     {
@@ -55,4 +55,5 @@ namespace ConsoleApp1
         }
 
     }
+
 }
