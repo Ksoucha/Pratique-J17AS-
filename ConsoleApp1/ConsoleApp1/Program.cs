@@ -1,6 +1,36 @@
-﻿// See https://aka.ms/new-console-template for more information
-using ConsoleApp1;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-Console.WriteLine("Hello, World!");
+namespace ConsoleApp1
+{
 
-new Meteo(temperatureCelcius);
+    internal class MonOutil
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Bonjour, quel est votre nom?");
+
+            // Code qui lit la console pour stocker le nom
+            string? username;
+
+            username = Console.ReadLine();
+
+            // Code qui accueille l'utilisateur par son nom
+            Console.WriteLine($"Bienvenue {username} à MonOutil.");
+
+           
+        }
+    }
+
+}
+
+
+
+
+
+
+
+

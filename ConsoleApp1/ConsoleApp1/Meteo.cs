@@ -8,16 +8,51 @@ namespace ConsoleApp1
 {
     internal class Meteo
     {
-        public Meteo(double temperatureCelcius) 
+        public Meteo() 
         {
-            Console.WriteLine("Bienvenue à l'outil Meteo");
+            Console.WriteLine("Bienvenue à l'outil Météo.");
+            Console.Write("Entrez C pour le mode en Celsius ou F pour le mode en Fahrenheit.");
 
-            Console.WriteLine("Quelle est la temperature en Celcius aujourdhui?");
-            float temperatureCelcius;
+            //double resultat = 0.0;
+            //double resultat2 = Math.Round(resultat, 2);
+            double tempenCelsius;
+            double tempenFahrenheit;
+            string? line;
 
-            Console.Write("La temperature en Fahrenheit: ");
 
-            _ = temperatureCelcius * 1.8 + 32;
+            while (true)
+            {
+                string? Line = Console.ReadLine();
+                if (Line == "c" || Line == "C")
+                {
+                    Console.WriteLine("Bienvenue en mode Celsius.");
+                    Console.WriteLine("\n \n Entrez la température en Celsius: \n \n");
+                    line = Console.ReadLine();
+                    tempenCelsius = Convert.ToDouble(line);
+                    tempenFahrenheit = (tempenCelsius * 9 / 5) + 32;
+                    Console.WriteLine($"La temperature en Fahrenheit: {tempenFahrenheit}");
+
+                    break;
+                }
+                else if (Line == "f" || Line == "F")
+                {
+                    Console.WriteLine("Bienvenue en mode Fahrenheit.");
+                    Console.WriteLine("\n \n Entrez la température en Fahrenheit: \n \n");
+                    line = Console.ReadLine();
+                    tempenFahrenheit = Convert.ToDouble(line);
+                    tempenCelsius = (tempenFahrenheit - 32) / (9 / 5);
+                    Console.WriteLine($"La temperature en Celsius: {tempenCelsius}");
+
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Assurez-vous de taper soit C ou F");
+                }
+            }
+
+
         }
+
     }
 }
