@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonOutil
+namespace ConsoleApp1
 {
     internal class Meteo
     {
         public Meteo() 
-        {
-            Console.WriteLine("Bienvenue à l'outil Météo.");
-            Console.Write("Entrez C pour le mode en Celsius ou F pour le mode en Fahrenheit.");
 
-            //double resultat = 0.0;
-            //double resultat2 = Math.Round(resultat, 2);
+        {
+            Console.WriteLine("Bienvenue à l'outil Météo.\n");
+            Console.WriteLine("Entrez C pour le mode en Celsius ou F pour le mode en Fahrenheit.");
+
+            // double resultat = 0.0;
+            // double resultat2 = Math.Round(resultat, 2);
             double tempenCelsius;
             double tempenFahrenheit;
             string? line;
@@ -30,7 +31,8 @@ namespace MonOutil
                     line = Console.ReadLine();
                     tempenCelsius = Convert.ToDouble(line);
                     tempenFahrenheit = (tempenCelsius * 9 / 5) + 32;
-                    Console.WriteLine($"La temperature en Fahrenheit: {tempenFahrenheit}");
+                    tempenFahrenheit = Math.Round(tempenFahrenheit, 2);
+                    Console.WriteLine($"La température en Fahrenheit: {tempenFahrenheit}");
 
                     break;
                 }
@@ -40,8 +42,9 @@ namespace MonOutil
                     Console.WriteLine("\n \n Entrez la température en Fahrenheit: \n \n");
                     line = Console.ReadLine();
                     tempenFahrenheit = Convert.ToDouble(line);
-                    tempenCelsius = (tempenFahrenheit - 32) / (9 / 5);
-                    Console.WriteLine($"La temperature en Celsius: {tempenCelsius}");
+                    tempenCelsius = ((tempenFahrenheit - 32) *5 ) / 9;
+                    tempenCelsius = Math.Round(tempenCelsius, 2);
+                    Console.WriteLine($"La température en Celsius: {tempenCelsius}");
 
                     break;
                 }
@@ -51,6 +54,7 @@ namespace MonOutil
                 }
             }
 
+            Console.WriteLine("Merci d'avoir utilisé l'outil Météo!");
 
         }
 
